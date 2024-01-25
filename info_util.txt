@@ -1,0 +1,35 @@
+
+from langchain.document_loaders import UnstructuredFileLoader
+
+
+
+#Create a loader for all document types:
+loader = UnstructuredFileLoader("path/to/files/*")
+
+# Load the documents:
+docs = loader.load()
+
+#Differentiate between formats:
+for doc in docs:
+    file_extension = doc.file_extension
+    file_type = doc.file_type
+    content = doc.content
+    # Perform actions based on the file extension or file type
+    if file_extension == ".pdf":
+        # Handle PDF document
+        pass
+    elif file_extension == ".doc":
+        # Handle DOC document
+        pass
+    elif file_extension == ".txt":
+        # Handle TXT document
+        pass
+    elif file_extension == ".csv":
+        # Handle CSV document
+        pass
+    else:
+        # Handle other document types
+        pass
+
+#By accessing the file_extension or file_type attributes of each document, 
+# you can determine the format and perform specific actions accordingly.
